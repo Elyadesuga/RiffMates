@@ -1,8 +1,4 @@
 import os
-ALLOWED_HOSTS = ['*']
-
-# Дополнительная защита для production
-if os.environ.get('DEBUG', 'False') == 'False':
-    CSRF_COOKIE_SECURE = True
-    SESSION_COOKIE_SECURE = True
-    SECURE_SSL_REDIRECT = True
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
