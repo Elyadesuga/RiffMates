@@ -21,5 +21,5 @@ from home import view as home_views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("credits/", home_views.credits, name="credits")p
+    path("credits/", home_views.credits, name="credits")
 ]
