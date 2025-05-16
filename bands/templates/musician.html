@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}
+    {{ block.super }}: {{ musician.first_name }} {{ musician.last_name }}
+{% endblock %}
+
+{% block content %}
+    <h1>{{ musician.first_name }} {{ musician.last_name }}</h1>
+    <p>Date of birth: {{ musician.birth }}</p>
+    <p><a href="{% url 'musicians' %}">Back to musicians list</a></p>
+{% endblock %}
